@@ -32,21 +32,25 @@ header.appendChild(title);
 header.appendChild(gridBtn);
 header.appendChild(resetBtn);
 
+
+//RESET
+resetBtn.addEventListener('click',() => {
+    location.reload();
+})
+
+
 //CONTENT
 let content = document.querySelector('#content');
 content.style.padding = '20px';
 
 let container = document.createElement('div');
 container.classList.add('container');
-container.style.padding = '10px';
+container.style.padding = '20px';
 container.style.border = '4px solid grey';
 container.style.borderRadius = '20px';
 
 
-let box = document.createElement('div');
-box.classList.add('box');
-box.style.borderRadius = '4px';
-box.style.background = 'whitesmoke'
+
 
 
 //HOVER EFFECT & COLOR
@@ -57,34 +61,39 @@ function colors() {
     return '#'+randomHEX ;
 }
 
-box.addEventListener('mouseover', () => {
-    box.style.background = colors();
-});
-
-
-
-
 
 
 content.appendChild(container);
-container.appendChild(box) * 5;
- 
-//RESET
-resetBtn.addEventListener('click',() => {
-    location.reload();
-})
+
 
 //INPUT
 let input;
 
 gridBtn.addEventListener('click', () => {
-    input = parseInt(prompt("Enter number to set Grid : MAX No:100 ", 0));
+    input = parseInt(prompt("Enter number to set Grid : MAX No:10 x 10 ", 10));
 
-    if (isNaN(input) || input < 1 || input > 100) {
+    if (isNaN(input) || input < 1 || input > 10) {
         alert('Not In the LIMIT');
         return;
     }
-    return input ;
+
+    for (let i = 0; i < input*input; i++) {
+        let box = document.createElement('div');
+    box.classList.add('box');
+    box.style.borderRadius = '4px';
+    box.style.background = 'whitesmoke'
+    box.addEventListener('mouseover', () => {
+    box.style.background = colors();
+}); 
+       container.appendChild(box);
+    }
+    
 });
+
+
+
+
+ 
+
 
 
