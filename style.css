@@ -2,4 +2,50 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} 
+
+#header {
+    border-bottom: 2px solid #cdcdcd;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 900;
+    font-family: cursive;
+}
+
+.gridBtn , .resetBtn{
+    background-color: rgb(255, 253, 245);
+    border: solid 4px skyblue ; 
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    background-color: #cdcdcd;
+    height: 60vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 64%;
+    height: 64%;
+}
+
+.box {
+    border: 2px solid black;
+    width: 64px;
+    height: 64px;
+    border-radius: 2px;
 }
